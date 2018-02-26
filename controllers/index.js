@@ -25,7 +25,7 @@ module.exports = function (router) {
          }
     });
 
-    router.post('/', function (req, res){
+    router.post('/webhook', function (req, res){
         if (req.body.object === 'page') {
             req.body.entry.forEach(entry => {
                 entry.messaging.forEach(event => {
