@@ -8,13 +8,13 @@ module.exports = function (router) {
 
     var model = new IndexModel();
 
-    router.get('/', function (req, res) {
+    // router.get('/', function (req, res) {
         
-        res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
+    //     res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');
         
-    });
+    // });
 
-    router.get('/verification', function (req, res){
+    router.get('/', function (req, res){
         const hubChallenge = req.query['hub.challenge'];
         const hubMode = req.query['hub.mode'];
          const verifyTokenMatches = (req.query['hub.verify_token'] === 'contento');
@@ -25,7 +25,7 @@ module.exports = function (router) {
          }
     });
 
-    router.post('/webhook', function (req, res){
+    router.post('/', function (req, res){
         if (req.body.object === 'page') {
             req.body.entry.forEach(entry => {
                 entry.messaging.forEach(event => {
