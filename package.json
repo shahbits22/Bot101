@@ -10,13 +10,15 @@
     "all": "npm run build && npm run test"
   },
   "dependencies": {
+    "apiai": "^4.0.3",
     "body-parser": "^1.18.2",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
     "construx-less": "^1.0.0",
     "eslint": "^1.10.3",
     "express": "^4.16.2",
-    "kraken-js": "^2.0.0"
+    "kraken-js": "^2.0.0",
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
