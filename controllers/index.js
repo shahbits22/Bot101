@@ -1,7 +1,7 @@
 'use strict';
 
 var IndexModel = require('../models/index');
-const processMessage = require('../helpers/processMessage');
+//const processMessage = require('../helpers/processMessage');
 
 
 module.exports = function (router) {
@@ -30,7 +30,7 @@ module.exports = function (router) {
             req.body.entry.forEach(entry => {
                 entry.messaging.forEach(event => {
                 if (event.message && event.message.text) {
-                        processMessage(event);
+                      //  processMessage(event);
                     }
                 });
             });
