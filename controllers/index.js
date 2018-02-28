@@ -1,10 +1,12 @@
 'use strict';
 
 //var IndexModel = require('../models/index');
-const MessageHelper = require('../helpers/messageHelper');
+//const MessageHelper = require('../helpers/messageHelper');
+import MessageHelper from '../helpers/messageHelper';
 
 module.exports = function (router) {
 
+    
     // router.get('/', function (req, res) {
         
     //     res.send('<code><pre>' + JSON.stringify(model, null, 2) + '</pre></code>');

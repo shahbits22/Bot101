@@ -1,7 +1,8 @@
+import request from 'request';
 const API_AI_TOKEN = process.env.API_AI_TOKEN;
 const apiAiClient = require('apiai')(API_AI_TOKEN);
 const FACEBOOK_ACCESS_TOKEN = process.env.FACEBOOK_ACCESS_TOKEN;
-const request = require('request');
+
 
 const sendTextMessage = (senderId, text) => {
     request({
