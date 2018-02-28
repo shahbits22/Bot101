@@ -5,13 +5,14 @@
   "author": "divshah",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js --exec babel-node --presets babel-preset-env",
+    
+    "start": "./node_modules/.bin/babel-node  index.js",
     "test": "grunt test",
-    "build": "babel -d build",
     "all": "npm run build && npm run test"
   },
   "dependencies": {
     "apiai": "^4.0.3",
+    "babel-preset-env": "^1.6.1",
     "body-parser": "^1.18.2",
     "construx": "^1.0.0",
     "construx-copier": "^1.0.0",
@@ -23,7 +24,6 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-config-dir": "^0.3.2",
