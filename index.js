@@ -24,6 +24,7 @@ app = module.exports = express();
 app.use(kraken(options));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
 app.on('start', function () {
     console.log('Application ready to serve requests.');
     console.log('Environment: %s', app.kraken.get('env:env'));
