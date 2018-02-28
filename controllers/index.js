@@ -2,7 +2,7 @@
 
 //var IndexModel = require('../models/index');
 //const MessageHelper = require('../helpers/messageHelper');
-import MessageHelper from '../helpers/messageHelper';
+import * as MessageHelper from '../helpers/messageHelper';
 
 module.exports = function (router) {
 
