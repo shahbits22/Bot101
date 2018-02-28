@@ -1,9 +1,10 @@
 'use strict';
 
-import express from 'express';
-import kraken from 'kraken-js';
-import http from 'http'
-import bodyParser from 'body-parser';
+var express = require('express');
+var kraken = require('kraken-js');
+var http = require('http');
+
+const bodyParser = require('body-parser');
 
 var options, app;
 
