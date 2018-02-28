@@ -1,8 +1,8 @@
 'use strict';
 
-var IndexModel = require('../models/index');
-const processMessage = require('../helpers/processMessage');
-
+//var IndexModel = require('../models/index');
+//const processMessage = require('../helpers/processMessage');
+import * as MessageHelper from '../helpers/messageHelper';
 
 module.exports = function (router) {
 
@@ -28,12 +28,31 @@ module.exports = function (router) {
     router.post('/webhook', function (req, res){
         if (req.body.object === 'page') {
             req.body.entry.forEach(entry => {
-                entry.messaging.forEach(event => {
-                if (event.message && event.message.text) {
-                        processMessage(event);
-                    }
-                });
-            });
+
+                // Gets the body of the webhook event
+            let webhook_event = entry.messaging[0];
+            console.log(webhook_event);
+
+
+            // Get the sender PSID
+            let sender_psid = webhook_event.sender.id;
+            console.log('Sender PSID: ' + sender_psid);
+
+            // Check if the event is a message or postback and
+            // pass the event to the appropriate handler function
+            if (webhook_event.message && webhook_event.message.text) {
+               // handleMessage(sender_psid, webhook_event.message); 
+                MessageHelper.processMessage(webhook_event);       
+            } else if (webhook_event.postback) {
+                MessageHelper.handlePostback(sender_psid, webhook_event.postback);
+            }
+            
+            /*entry.messaging.forEach(event => {
+            if (event.message && event.message.text) {
+                    MessageHelper.processMessage(event);
+                }
+            });*/
+        });
                 res.status(200).end();
         }
     })
