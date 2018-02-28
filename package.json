@@ -21,6 +21,8 @@
     "request": "^2.83.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
     "grunt-config-dir": "^0.3.2",
