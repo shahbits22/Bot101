@@ -5,8 +5,9 @@
   "author": "divshah",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js --exec babel-node --presets babel-preset-env",
     "test": "grunt test",
-    "build": "grunt build",
+    "build": "babel -d build",
     "all": "npm run build && npm run test"
   },
   "dependencies": {

@@ -1,8 +1,8 @@
 'use strict';
 
 //var IndexModel = require('../models/index');
-//const processMessage = require('../helpers/processMessage');
-import * as MessageHelper from '../helpers/messageHelper';
+//const MessageHelper = require('../helpers/messageHelper');
+import MessageHelper from '../helpers/messageHelper';
 
 module.exports = function (router) {
 
