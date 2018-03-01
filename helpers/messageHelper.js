@@ -83,7 +83,12 @@ export const setupGetStarted = () => {
                 "payload":GET_STARTED
               }
             }
-        });
+        },function (error, response, body) {
+            if (error) {
+              return console.error('get started failed:', error);
+            }
+            console.log('get started successful!  Server responded with:', body);
+          });
 }
 
 export const setupPersistantMenu = () => {
@@ -92,7 +97,12 @@ export const setupPersistantMenu = () => {
         qs: { access_token: FACEBOOK_ACCESS_TOKEN },
         method: 'POST',
         json: PERSISTANT_MENU
-        });
+        },function (error, response, body) {
+            if (error) {
+              return console.error('Create persistant menu failed:', error);
+            }
+            console.log('Create persistant menu successful!  Server responded with:', body);
+          });
 }
 
 
