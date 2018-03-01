@@ -54,6 +54,11 @@ module.exports = function (router) {
         });
                 res.status(200).end();
         }
-    })
+    });
+
+    router.post('/getStarted', function (req, res){
+        MessageHelper.setupGetStarted();
+        res.status(200).end();
+    });
 
 };

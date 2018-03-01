@@ -2,11 +2,13 @@ import request from 'request';
 const API_AI_TOKEN = process.env.API_AI_TOKEN;
 const apiAiClient = require('apiai')(API_AI_TOKEN);
 const FACEBOOK_ACCESS_TOKEN = process.env.FACEBOOK_ACCESS_TOKEN;
+const FACEBOOK_API_URL = 'https://graph.facebook.com/v2.6/me';
+const GET_STARTED = 'Get started';
 
 
 const sendTextMessage = (senderId, text) => {
     request({
-       url: 'https://graph.facebook.com/v2.6/me/messages',
+       url: '${FACEBOOK_API_URL}/messages',
        qs: { access_token: FACEBOOK_ACCESS_TOKEN },
        method: 'POST',
        json: {
@@ -41,6 +43,19 @@ export const handlePostback = (event) => {
         apiaiSession.on('error', error => console.log(error));
         apiaiSession.end();
     }
+
+export const setupGetStarted = () => {
+    request({
+        url: '${FACEBOOK_API_URL}/messenger_profile',
+        qs: { access_token: FACEBOOK_ACCESS_TOKEN },
+        method: 'POST',
+        json: {
+            "get_started":{
+                "payload":GET_STARTED
+              }
+            }
+        });
+}
 
 
 
