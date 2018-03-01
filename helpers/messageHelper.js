@@ -108,7 +108,7 @@ request({
                 }
             }
         }
-    },,function (error, response, body) {
+    },function (error, response, body) {
         if (error) {
           return console.error('Could not send prescriptions:', error);
         }
