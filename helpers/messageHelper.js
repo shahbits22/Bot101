@@ -46,7 +46,20 @@ export const handlePostback = (event) => {
 
 export const setupGetStarted = () => {
     request({
-        url: '${FACEBOOK_API_URL}/messenger_profile',
+        url: `${FACEBOOK_API_URL}/messenger_profile`,
+        qs: { access_token: FACEBOOK_ACCESS_TOKEN },
+        method: 'POST',
+        json: {
+            "get_started":{
+                "payload":GET_STARTED
+              }
+            }
+        });
+}
+
+export const setupPersistantMenu = () => {
+    request({
+        url: `${FACEBOOK_API_URL}/messenger_profile`,
         qs: { access_token: FACEBOOK_ACCESS_TOKEN },
         method: 'POST',
         json: {
