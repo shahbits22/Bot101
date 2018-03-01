@@ -8,7 +8,7 @@ const GET_STARTED = 'Get started';
 
 const sendTextMessage = (senderId, text) => {
     request({
-       url: '${FACEBOOK_API_URL}/messages',
+       url: `${FACEBOOK_API_URL}/messages`,
        qs: { access_token: FACEBOOK_ACCESS_TOKEN },
        method: 'POST',
        json: {
