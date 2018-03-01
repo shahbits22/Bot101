@@ -63,8 +63,8 @@ const sendPrescriptions = (senderId, text) => {
 let elements = [
     {
         "title":"Tylenol",
-        "image_url":"https://pacific-headland-84917.herokuapp.com/images/tylenol.png",
-        "subtitle":"<span>Refill Remaining: 2</span>",
+        "image_url":"https://pacific-headland-84917.herokuapp.com/images/tylenol.jpeg",
+        "subtitle":"Refill Remaining: 2",
         "buttons":[
           {
             "type":"postback",
@@ -75,8 +75,8 @@ let elements = [
     },
     {
         "title":"Thyroid medication",
-        "image_url":"https://pacific-headland-84917.herokuapp.com/images/Thyroid.png",
-        "subtitle":"<span>Refill Remaining: 1</span>",
+        "image_url":"https://pacific-headland-84917.herokuapp.com/images/Thyroid.jpeg",
+        "subtitle":"Refill Remaining: 1",
         "buttons":[
           {
             "type":"postback",
@@ -87,8 +87,8 @@ let elements = [
     },
     {
         "title":"Metformin",
-        "image_url":"https://pacific-headland-84917.herokuapp.com/images/metformin.png",
-        "subtitle":"<span>Refill Remaining: 2</span><br/><span>Available after: March 7th, 2018</span>"
+        "image_url":"https://pacific-headland-84917.herokuapp.com/images/metformin.jpeg",
+        "subtitle":"Refill Remaining: 2. Available after: March 7th, 2018"
         
     }
 ];
