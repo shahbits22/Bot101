@@ -61,4 +61,9 @@ module.exports = function (router) {
         res.status(200).end();
     });
 
+    router.get('/persistantMenu', function (req, res){
+        MessageHelper.setupPersistantMenu();
+        res.status(200).end();
+    });
+
 };
